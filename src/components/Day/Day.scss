@@ -1,0 +1,63 @@
+.day {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-right: 40px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    &:last-child { margin-right: 0; }
+
+    &:hover,
+    &_active {
+        background-color: #2D96FD;
+
+        & .day-header__date,
+        & .day-header__day-of-week,
+        & .day__balance {
+            color: #fff;
+        }
+    }
+}
+
+.day-header {
+    display: flex;
+    align-items: center;
+}
+
+.day-header__date {
+    font-weight: 700;
+    color: #2D96FD;
+    font-size: 30px;
+    margin-right: auto;
+}
+
+.day-header__day-of-week {
+    color: #AAAAAA;
+}
+
+.day-header__content {
+    margin: 10px 0;
+}
+
+.day__income {
+    padding: 10px 0;
+    text-align: center;
+    color: rgba(0, 255, 0, .3);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.day__consumption {
+    padding: 10px 0;
+    text-align: center;
+    color: rgba(255, 0, 0, .5);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.day__balance {
+    font-weight: 700;
+    font-size: 32px;
+    color: #000;
+}
