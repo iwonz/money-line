@@ -12,7 +12,7 @@ export interface IDateProps {
 export default class Day extends React.Component<IDateProps> {
     render() {
         return (
-            <div className={"day " + (this.props.isActive ? 'day_active' : '') } onClick={this.props.onClick}>
+            <div className={"day " + (this.props.isActive ? 'day_active' : '') } data-date={this.props.date.format('LL')} onClick={this.props.onClick}>
                 <div className="day-header">
                     <div className="day-header__date">{this.props.date.format('DD')}</div>
                     <div className="day-header__day-of-week">{this.props.date.format('ddd')}</div>

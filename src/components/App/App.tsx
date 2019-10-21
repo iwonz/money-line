@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TimeLine from "../Timeline/TimeLine";
+import TimeLine from "../TimeLine/TimeLine";
 
 import moment from 'moment';
 

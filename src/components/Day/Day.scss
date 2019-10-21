@@ -2,11 +2,8 @@
     padding: 30px;
     background-color: #fff;
     border-radius: 10px;
-    margin-right: 40px;
-    transition: all .2s ease-in-out;
+    margin-right: 15px;
     cursor: pointer;
-
-    &:last-child { margin-right: 0; }
 
     &:hover,
     &_active {
