@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/iwonz/money-line/static/css/main.45e49e4d.chunk.css",
+    "main.js": "/iwonz/money-line/static/js/main.b8d25e5e.chunk.js",
+    "main.js.map": "/iwonz/money-line/static/js/main.b8d25e5e.chunk.js.map",
+    "runtime-main.js": "/iwonz/money-line/static/js/runtime-main.b3bcec60.js",
+    "runtime-main.js.map": "/iwonz/money-line/static/js/runtime-main.b3bcec60.js.map",
+    "static/js/2.1f12ee61.chunk.js": "/iwonz/money-line/static/js/2.1f12ee61.chunk.js",
+    "static/js/2.1f12ee61.chunk.js.map": "/iwonz/money-line/static/js/2.1f12ee61.chunk.js.map",
+    "index.html": "/iwonz/money-line/index.html",
+    "precache-manifest.4bffb5b3ad8cd8b90668992e150514e3.js": "/iwonz/money-line/precache-manifest.4bffb5b3ad8cd8b90668992e150514e3.js",
+    "service-worker.js": "/iwonz/money-line/service-worker.js",
+    "static/css/main.45e49e4d.chunk.css.map": "/iwonz/money-line/static/css/main.45e49e4d.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b3bcec60.js",
+    "static/js/2.1f12ee61.chunk.js",
+    "static/css/main.45e49e4d.chunk.css",
+    "static/js/main.b8d25e5e.chunk.js"
+  ]
+}
