@@ -1,67 +1,60 @@
 .timeline {
+  display: flex;
+  align-items: center;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  touch-action: pan-x;
+  position: relative;
+  padding-top: 45px;
+
+  //&:before,
+  //&:after {
+  //    content: '';
+  //    width: 90px;
+  //    height: 100%;
+  //    position: absolute;
+  //    top: 0;
+  //    z-index: 1;
+  //}
+  //
+  //&:before {
+  //    left: 0;
+  //    background: linear-gradient(90deg, rgba(241, 241, 241, 0.9), transparent);
+  //}
+  //
+  //&:after {
+  //    right: 0;
+  //    background: linear-gradient(90deg, transparent, rgba(241, 241, 241, 0.9));
+  //}
+
+  &__content,
+  &__year,
+  &__month {
     display: flex;
     align-items: center;
-    scroll-behavior: smooth;
-    overflow: scroll;
     position: relative;
-    padding-top: 45px;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
 
-    //&:before,
-    //&:after {
-    //    content: '';
-    //    width: 90px;
-    //    height: 100%;
-    //    position: absolute;
-    //    top: 0;
-    //    z-index: 1;
-    //}
-    //
-    //&:before {
-    //    left: 0;
-    //    background: linear-gradient(90deg, rgba(241, 241, 241, 0.9), transparent);
-    //}
-    //
-    //&:after {
-    //    right: 0;
-    //    background: linear-gradient(90deg, transparent, rgba(241, 241, 241, 0.9));
-    //}
+  &__year,
+  &__month {
+    margin-right: 15px;
 
-    //&__header {
-    //    padding: 15px 0;
-    //}
-    //
-    //&__year,
-    //&__month {
-    //    border-radius: 15px;
-    //    background-color: #fff;
-    //    padding: 5px 10px;
-    //}
-    //
-    //&__month { margin-left: 15px; }
-
-
-    &__content,
-    &__year,
-    &__month {
-        display: flex;
-        align-items: center;
-        position: relative;
-        flex-grow: 1;
-        flex-shrink: 0;
+    &:last-child {
+      margin-right: 0;
     }
+  }
 
-    &__year-header,
-    &__month-header {
-        position: absolute;
-        top: -45px;
-        left: 0;
-        border-radius: 15px;
-        background-color: #fff;
-        padding: 5px 10px;
-        transition: all .2s ease-in-out;
-    }
-
-    //&__month-header {
-    //    left: 72px;
-    //}
+  &__year-header,
+  &__month-header {
+    position: absolute;
+    top: -45px;
+    left: 0;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 5px 10px;
+    transition: left .2s ease;
+    will-change: 'left';
+  }
 }

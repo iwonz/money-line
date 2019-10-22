@@ -7,6 +7,7 @@
     "moment": "^2.24.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-motion": "^0.5.2",
     "react-scripts": "3.2.0",
     "typescript": "3.6.4"
   },
@@ -37,6 +38,7 @@
     "@types/node": "12.11.1",
     "@types/react": "16.9.9",
     "@types/react-dom": "16.9.2",
+    "@types/react-motion": "0.0.29",
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
     "eslint": "^6.5.1",
