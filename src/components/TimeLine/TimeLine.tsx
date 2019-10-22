@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import React from 'react';
 import { head, get, upperFirst, set, forEach, concat } from 'lodash';
 import moment, { Moment } from 'moment';
 import { Motion, presets, spring } from 'react-motion';
@@ -51,7 +51,7 @@ export default class TimeLine extends React.Component<any, ITimeLineState> {
   render() {
     const years: any = {};
 
-    this.state.days.map(date => {
+    forEach(this.state.days, date => {
       const currentValue = get(years, `${date.format('YYYY')}.${date.format('MM')}`, []);
       set(years, `${date.format('YYYY')}.${date.format('MM')}`, concat(currentValue, date));
     });

@@ -50,11 +50,12 @@ export function generateOperation(
 }
 
 export function generateOperations(count: number): IOperation[] {
-  let operations = [];
+  const operations = [];
 
   for (let i = 1; i <= count; i++) {
     let operation = generateOperation();
 
+    // eslint-disable-next-line
     while (find(operations, item => item.start.format('LL') === operation.start.format('LL'))) {
       operation = generateOperation();
     }
