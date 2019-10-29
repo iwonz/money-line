@@ -32,6 +32,7 @@ const getDatesInRange = (from: Moment, to: Moment): Moment[] => {
 };
 
 export default class TimeLine extends React.Component<any, ITimeLineState> {
+  timeLineElement: HTMLDivElement;
   timeLineContentElement: HTMLDivElement;
 
   constructor(props: any) {
@@ -82,7 +83,7 @@ export default class TimeLine extends React.Component<any, ITimeLineState> {
     });
 
     return (
-      <div className="timeline" onWheel={this.onScroll}>
+      <div className="timeline" ref={r => (this.timeLineElement = r)}>
         <Motion defaultStyle={{ z: 0 }} style={{ z: spring(this.state.scrollLeft, presets.noWobble) }}>
           {({ z }) => (
             <div
@@ -99,6 +100,8 @@ export default class TimeLine extends React.Component<any, ITimeLineState> {
   }
 
   componentDidMount() {
+    this.timeLineElement.addEventListener('wheel', this.onScroll, { capture: true, passive: false });
+
     this.scrollToDate(this.state.activeDay);
   }
 
@@ -112,22 +115,14 @@ export default class TimeLine extends React.Component<any, ITimeLineState> {
       return;
     }
 
-    const scrolling = () => {
-      this.setState({ scrollLeft: newScrollLeft });
-      this.updateHeaders();
-    };
-
-    // Begin Scrolling Animation
-    window.requestAnimationFrame(scrolling);
+    requestAnimationFrame(() => {
+      this.setState({ scrollLeft: newScrollLeft }, () => this.updateHeaders());
+    });
   }
 
   getNewScrollLeft(candidate: number): number {
     if (candidate < 0) {
       return 0;
-    }
-
-    if (!this.timeLineContentElement) {
-      return candidate;
     }
 
     const maxScrollLeft =
@@ -152,10 +147,6 @@ export default class TimeLine extends React.Component<any, ITimeLineState> {
   }
 
   updateHeaders() {
-    if (!this.timeLineContentElement) {
-      return;
-    }
-
     const scrollLeft = this.state.scrollLeft;
 
     forEach(this.timeLineContentElement.querySelectorAll('.timeline__month-header'), (headerElement: any) => {
@@ -188,10 +179,6 @@ export default class TimeLine extends React.Component<any, ITimeLineState> {
   }
 
   scrollToDate(date: Moment) {
-    if (!this.timeLineContentElement) {
-      return;
-    }
-
     const currentDayElement: HTMLDivElement | null = this.timeLineContentElement.querySelector(
       `.day[data-date="${date.format('LL')}"]`,
     );
