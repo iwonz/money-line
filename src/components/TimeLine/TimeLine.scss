@@ -1,9 +1,7 @@
 .timeline {
   display: flex;
   align-items: center;
-  scroll-behavior: smooth;
   overflow: hidden;
-  touch-action: pan-x;
   position: relative;
   padding-top: 45px;
 
@@ -30,6 +28,7 @@
   &__content,
   &__year,
   &__month {
+    touch-action: none;
     display: flex;
     align-items: center;
     position: relative;
@@ -55,6 +54,6 @@
     background-color: #fff;
     padding: 5px 10px;
     transition: left .2s ease;
-    will-change: 'left';
+    will-change: left;
   }
 }
